@@ -22,12 +22,16 @@ public class SelectedSort {
 	}
 
 	private static void sort(int a[]) {
-		for (int i = 0; i < a.length; i++) {
+		
+		int N = a.length;
+		for (int i = 0; i < N; i++) {
 			int minIndex = i;
-			for (int j = i; j < a.length; j++) {
-				if (a[j] < a[minIndex]) {
-					minIndex = j;
-				}
+			for (int j = i; j < N; j++) {
+//				if (a[j] < a[minIndex]) {
+//					minIndex = j;
+//				}
+				minIndex = a[j] < a[minIndex] ? j : minIndex;
+
 			}
 			if (minIndex != i) {
 				swap(a, i, minIndex);
