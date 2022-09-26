@@ -22,7 +22,7 @@ public class SingleLinkList {
 		}
 		root = root.next;
 		printList(root);
-		
+
 		printList(revert(root));
 	}
 
@@ -52,5 +52,9 @@ public class SingleLinkList {
 		}
 		System.out.println();
 	}
+
+	
+	
+
 
 }
