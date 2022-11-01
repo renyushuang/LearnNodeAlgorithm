@@ -17,6 +17,10 @@ public class Node {
 
 	public static void printNodList(String name, Node note) {
 		System.out.println("-------------------");
+		if (note == null) {
+			System.out.println(name + "note ==null");
+		}
+
 		Node noteCur = note;
 		System.out.print(name + " = ");
 		while (noteCur != null) {
