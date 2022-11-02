@@ -6,7 +6,7 @@ import java.util.HashMap;
 * 作者：renyushuang
 * 日期：2022年10月31日
 * 
-* 题目：
+* 题目：两数之和
 * 给一个整数数组nums和一个整数目标值target，请你在该数组中找到目标值target的那两个整数，并返回它们的数组下标。
 * 
 * 示例：	输入 nums = [2,7,11,15].target = 9
