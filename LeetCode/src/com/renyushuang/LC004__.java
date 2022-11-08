@@ -24,28 +24,20 @@ public class LC004__ {
 		int b[] = { 2 };
 		double result = findMedianSortedArrays(a, b);
 		System.out.println(" result = " + result);
-		
-		
+
 		// 垃圾解法：先合并后二分
 		// 优质解法：因为是有序，假设有一个分割线，左边的都是比右边小的，那么左边的最大或者右边的最小就是中位数
-		
-		
+
 	}
-	
-	
 
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+	
 
 		
 		
 		
-		
-		
-
 		return 0;
 	}
-	
-	
 
 //	public static int[] mergeArray(int[] nums1, int[] nums2) {
 //
@@ -80,8 +72,5 @@ public class LC004__ {
 //
 //		return 0;
 //	}
-	
-	
-	
-	
+
 }
