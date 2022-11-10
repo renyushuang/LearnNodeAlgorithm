@@ -20,6 +20,9 @@ import java.util.Arrays;
 public class LC004__ {
 
 	public static void main(String[] args) {
+//		int a[] = { 1, 3 };
+//		int b[] = { 2 };
+
 		int a[] = { 1, 3 };
 		int b[] = { 2 };
 		double result = findMedianSortedArrays(a, b);
@@ -31,12 +34,58 @@ public class LC004__ {
 	}
 
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-	
 
-		
-		
-		
-		return 0;
+		int len1 = nums1.length;
+		int len2 = nums2.length;
+		int totalLength = len1 + len2;
+		if (totalLength % 2 == 1) {
+			int mid = totalLength / 2;
+			return getKthElement(nums1, nums2, mid + 1);
+		} else {
+			int mid1 = totalLength / 2 - 1;
+			int mid2 = totalLength / 2;
+
+			return (getKthElement(nums1, nums2, mid1 + 1) + getKthElement(nums1, nums2, mid2 + 1)) / 2;
+		}
+	}
+
+	private static int getKthElement(int[] nums1, int[] nums2, int k) {
+		int len1 = nums1.length;
+		int len2 = nums2.length;
+
+		int index1 = 0;
+		int index2 = 0;
+
+		while (true) {
+			if (index1 == len1) {
+				return nums2[index2 + k - 1];
+			}
+			if (index2 == len2) {
+				return nums1[index1 + k - 1];
+			}
+
+			if (k == 1) {
+				return Math.min(nums1[index1], nums2[index2]);
+			}
+
+			int half = k / 2;
+			int newIndex1 = Math.min(index1 + half, len1) - 1;
+			int newIndex2 = Math.min(index2 + half, len2) - 1;
+
+			int p1 = nums1[newIndex1];
+			int p2 = nums2[newIndex2];
+
+			if (p1 <= p2) {
+				k -= (newIndex1 - index1 + 1);
+				index1 = newIndex1 + 1;
+			} else {
+				k -= (newIndex2 - index2 + 1);
+				index2 = newIndex2 + 1;
+
+			}
+
+		}
+
 	}
 
 //	public static int[] mergeArray(int[] nums1, int[] nums2) {
