@@ -35,7 +35,7 @@ package com.renyushuang;
 *  输入：s = "A", numRows = 1
 *  输出："A"
 */
-public class LC006 {
+public class LC006___ {
 
 	public static void main(String[] args) {
 
@@ -43,10 +43,18 @@ public class LC006 {
 
 	public static String convert(String s, int numRows) {
 
+		int len = s.length();
 		
 		
+	
 		
 		
+		char[][] arr = new char[numRows][];
+		for (int i = 0; i < len; i++) {
+			char value = s.charAt(i);
+
+		}
+
 		return "";
 	}
 
