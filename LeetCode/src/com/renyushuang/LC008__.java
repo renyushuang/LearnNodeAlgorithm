@@ -70,7 +70,7 @@ package com.renyushuang;
 
 
 */
-public class LC008 {
+public class LC008__ {
 
 	public static void main(String[] args) {
 		System.out.println("" + myAtoi("-91283472332"));
