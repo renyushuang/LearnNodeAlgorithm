@@ -40,13 +40,17 @@ package com.renyushuang;
 	保证每次出现字符 * 时，前面都匹配到有效的字符
 
 */
-public class LC010 {
+public class LC010__ {
 
 	public static void main(String[] args) {
 
 	}
 
 	public boolean isMatch(String s, String p) {
+		
+		
+		
+		
 
 		return true;
 	}
