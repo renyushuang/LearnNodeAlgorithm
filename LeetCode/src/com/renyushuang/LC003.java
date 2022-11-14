@@ -14,7 +14,7 @@ import java.util.HashMap;
 *	输出：3
 */
 
-public class LC003__ {
+public class LC003 {
 
 	public static void main(String[] args) {
 
