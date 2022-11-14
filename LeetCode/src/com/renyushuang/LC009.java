@@ -45,9 +45,6 @@ public class LC009 {
 		if (x < 0) {
 			return false;
 		}
-//		if (x == 0) {
-//			return true;
-//		}
 
 		int current = 0;
 		int index = 0;
