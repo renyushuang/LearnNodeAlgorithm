@@ -1,6 +1,6 @@
 package com.renyushuang;
 
-import com.common.Node;
+import com.common.ListNode;
 
 /*
 *	作者：renyushuang
@@ -19,10 +19,10 @@ import com.common.Node;
 
 public class LC002 {
 
-	public static Node addTwoNumbers(Node node1, Node node2) {
+	public static ListNode addTwoNumbers(ListNode node1, ListNode node2) {
 
-		Node result = null;
-		Node tail = null;
+		ListNode result = null;
+		ListNode tail = null;
 
 		int flag = 0;
 		while (node1 != null || node2 != null) {
@@ -36,9 +36,9 @@ public class LC002 {
 			flag = value / 10;
 
 			if (result == null) {
-				result = tail = new Node(value % 10);
+				result = tail = new ListNode(value % 10);
 			} else {
-				tail.next = new Node(value % 10);
+				tail.next = new ListNode(value % 10);
 				tail = tail.next;
 			}
 
@@ -47,7 +47,7 @@ public class LC002 {
 		}
 
 		if (flag > 0) {
-			tail.next = new Node(flag);
+			tail.next = new ListNode(flag);
 		}
 
 		return result;
@@ -57,14 +57,14 @@ public class LC002 {
 		int[] note1Nums = { 2, 4, 3 };
 		int[] note2Nums = { 5, 6, 4 };
 
-		Node node1 = Node.createNodeList(note1Nums);
-		Node node2 = Node.createNodeList(note2Nums);
+		ListNode node1 = ListNode.createNodeList(note1Nums);
+		ListNode node2 = ListNode.createNodeList(note2Nums);
 
-		Node.printNodList("node1 = ", node1);
-		Node.printNodList("node2 = ", node2);
+		ListNode.printNodList("node1 = ", node1);
+		ListNode.printNodList("node2 = ", node2);
 
-		Node result = addTwoNumbers(node1, node2);
-		Node.printNodList("result = ", result);
+		ListNode result = addTwoNumbers(node1, node2);
+		ListNode.printNodList("result = ", result);
 
 	}
 

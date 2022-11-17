@@ -6,22 +6,27 @@ package com.common;
 *	
 */
 
-public class Node {
+public class ListNode {
 
-	public Node(int value) {
+	public ListNode(int index, ListNode next) {
+		this.value = index;
+		this.next = next;
+	}
+
+	public ListNode(int value) {
 		this.value = value;
 	}
 
 	public int value;
-	public Node next;
+	public ListNode next;
 
-	public static void printNodList(String name, Node note) {
+	public static void printNodList(String name, ListNode note) {
 		System.out.println("-------------------");
 		if (note == null) {
 			System.out.println(name + "note ==null");
 		}
 
-		Node noteCur = note;
+		ListNode noteCur = note;
 		System.out.print(name + " = ");
 		while (noteCur != null) {
 			System.out.print(noteCur.value);
@@ -35,12 +40,12 @@ public class Node {
 		System.out.println("-------------------");
 	}
 
-	public static Node createNodeList(int[] arr) {
-		Node node = new Node(-1);
-		Node createNode = node;
+	public static ListNode createNodeList(int[] arr) {
+		ListNode node = new ListNode(-1);
+		ListNode createNode = node;
 
 		for (int i = 0; i < arr.length; i++) {
-			createNode.next = new Node(arr[i]);
+			createNode.next = new ListNode(arr[i]);
 			createNode = createNode.next;
 		}
 
