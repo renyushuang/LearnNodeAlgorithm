@@ -46,7 +46,7 @@ import com.common.ListNode;
 	lists[i] 按 升序 排列
 	lists[i].length 的总和不超过 10^4
 */
-public class LC023 {
+public class LC023__ {
 
 	public static void main(String[] args) {
 		int a[] = { 1, 4, 5 };
