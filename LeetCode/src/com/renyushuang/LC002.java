@@ -26,8 +26,8 @@ public class LC002 {
 
 		int flag = 0;
 		while (node1 != null || node2 != null) {
-			int node1Value = node1 != null ? node1.value : 0;
-			int node2Value = node2 != null ? node2.value : 0;
+			int node1Value = node1 != null ? node1.val : 0;
+			int node2Value = node2 != null ? node2.val : 0;
 
 			int value = node1Value + node2Value + flag;
 			System.out.println("node1Value = " + node1Value + "   ---node2Value = " + node2Value);

@@ -9,15 +9,15 @@ package com.common;
 public class ListNode {
 
 	public ListNode(int index, ListNode next) {
-		this.value = index;
+		this.val = index;
 		this.next = next;
 	}
 
 	public ListNode(int value) {
-		this.value = value;
+		this.val = value;
 	}
 
-	public int value;
+	public int val;
 	public ListNode next;
 
 	public static void printNodList(String name, ListNode note) {
@@ -29,7 +29,7 @@ public class ListNode {
 		ListNode noteCur = note;
 		System.out.print(name + " = ");
 		while (noteCur != null) {
-			System.out.print(noteCur.value);
+			System.out.print(noteCur.val);
 			noteCur = noteCur.next;
 
 			if (noteCur != null) {
