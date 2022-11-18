@@ -34,7 +34,7 @@ public class LC022__ {
 	}
 
 	public static List<String> generateParenthesis(int n) {
-		String base = "()";
+	
 
 		List<String> res = new ArrayList();
 		dfs(res, new StringBuffer(), 0, 0, n);
