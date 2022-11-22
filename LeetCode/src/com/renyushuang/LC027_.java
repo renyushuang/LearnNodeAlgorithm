@@ -55,7 +55,7 @@ import java.util.Arrays;
 
 
 */
-public class LC027 {
+public class LC027_ {
 
 	public static void main(String[] args) {
 		int[] aar = { 1 };
