@@ -46,17 +46,57 @@ public class LC025__ {
 		int[] aar = { 1, 2, 3, 4, 5 };
 
 		ListNode aa = ListNode.createNodeList(aar);
-		reverseKGroup(aa, 2);
-
+		ListNode.printNodList("res = ", reverseKGroup(aa, 3));
 	}
 
 	public static ListNode reverseKGroup(ListNode head, int k) {
+		ListNode res = new ListNode(-1);
+		res.next = head;
+		ListNode start = res;
+		ListNode end = start;
 
-		ListNode temp = new ListNode(-1);
-	
+		while (start != null) {
+			for (int i = 0; i < k; i++) {
+				end = end.next;
+				if (end == null) {
+					return res.next;
+				}
+			}
 
-		return temp.next;
+			ListNode rev = revert(start, end);
+			start = rev;
+			end = rev;
+		}
 
+		
+
+		return res.next;
+
+	}
+
+	private static ListNode revert(ListNode start, ListNode end) {
+		ListNode.printNodList("start = ", start);
+		ListNode.printNodList("end = ", end);
+
+		ListNode pre = null;
+
+		ListNode cur = start.next;
+		ListNode first = cur;
+		ListNode endNode = end.next;
+
+		while (cur != endNode) {
+			ListNode temp = cur.next;
+			cur.next = pre;
+			pre = cur;
+			cur = temp;
+		}
+		ListNode.printNodList("revert pre", pre);
+		ListNode.printNodList("revert cur", cur);
+		ListNode.printNodList("revert start", start);
+
+		start.next = pre;
+		first.next = cur;
+		return first;
 	}
 
 }
