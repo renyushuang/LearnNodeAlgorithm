@@ -2,7 +2,9 @@
 package com.renyushuang;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
 *	作者：renyushuang
@@ -53,25 +55,60 @@ import java.util.List;
 
 */
 public class LC030_ {
-
+	// 双指针，map
 	public static void main(String[] args) {
+
+//		String[] aar = { "foo", "bar" };
+//		System.out.println("res = " + findSubstring("barfoothefoobarman", aar).toString());
+
+//		String[] aar1 = { "bar", "foo", "the" };
+//		System.out.println("res = " + findSubstring("barfoofoobarthefoobarman", aar1).toString());
 		
-		String []aar = {"foo","bar"};
-		findSubstring("barfoothefoobarman",aar);
+		String[] aar = { "word","good","best","good" };
+	
+		System.out.println("res = " + findSubstring("wordgoodgoodgoodbestword", aar).toString());
 	}
 
 	public static List<Integer> findSubstring(String s, String[] words) {
+		List<Integer> res = new ArrayList<>();
+		Map<String, Integer> map = new HashMap();
+		Map<String, Integer> map1 = new HashMap();
+		int wordsLen = words.length;
+		int wordLen = words[0].length();
+		int sLen = s.length();
+		for (String word : words) {
+			int value = map.getOrDefault(word, 0) + 1;
+			map.put(word, value);
+		}
 
-		List<String> list = new ArrayList<>();
-		mergeList(list, new StringBuffer(), 0, words);
-		System.out.println(""+list.toString());
-		
-		return null;
+		System.out.println(map.toString());
 
-	}
+		for (int i = 0; i <= sLen - wordsLen * wordLen; i++) {
+			System.out.println("-----------");
+			int start = 0;
+			map1.clear();
+			for (int j = i; j <i + wordsLen * wordLen; j += wordLen) {
+				String curent = s.substring(j, j + wordLen);
+				System.out.println("curent = " + curent);
 
-	public static void mergeList(List<String> list, StringBuffer buffer, int index, String[] words) {
-	
+				if (!map.containsKey(curent)) {
+					break;
+				} else {
+					map1.put(curent,map1.getOrDefault(curent, 0) + 1);
+					if (map.get(curent) < map1.get(curent)) {
+						break;
+					}
+				}
+				start++;
+			}
+
+//			break;
+			if (start == wordsLen) {
+				res.add(i);
+			}
+		}
+
+		return res;
 
 	}
 
