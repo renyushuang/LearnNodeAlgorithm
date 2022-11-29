@@ -36,11 +36,30 @@ package com.renyushuang;
 
 */
 public class LC029_ {
-
+	// 100 3 = 33
+	// 100 / 2^32 > 3
+	// 100 / 2^5 >=3 ->res+2^5,100-3*2^5 = 4
+	// 4 / 2^0 >=3 ->res+2^0,4-3*2^0=1
 	public static void main(String[] args) {
-		System.out.println("" + divide(10, 3));
+		System.out.println("res (1, 1) = " + divide(1, 1));
+		System.out.println("res(10, 3)  = " + divide(10, 3));
+		System.out.println("res(7, 3)  = " + divide(7, 3));
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static int divide(int dividend, int divisor) {
 		if (dividend == 0) {
 			return 0;
@@ -54,6 +73,21 @@ public class LC029_ {
 		// 100 / 2^5 >=3 ->res+2^5,100-3*2^5 = 4
 		// 4 / 2^0 >=3 ->res+2^0,4-3*2^0=1
 
-		return 0;
+		int flag = dividend ^ divisor;
+		System.out.println("flag = " + flag);
+	
+		long dd = Math.abs((long) dividend);
+		long dr = Math.abs((long) divisor);
+
+		int res = 0;
+		for (int i = 32; i >= 0; i--) {
+			if (dd >> i >= dr) {
+				res += 1 << i;
+				dd -= dr << i;
+			}
+
+		}
+
+		return flag >= 0 ? res : -res;
 	}
 }
