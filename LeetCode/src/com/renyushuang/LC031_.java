@@ -2,6 +2,8 @@
 package com.renyushuang;
 
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /*
 *	作者：renyushuang
@@ -45,15 +47,15 @@ import java.util.Arrays;
 public class LC031_ {
 
 	public static void main(String[] args) {
-		int [] nums = {1,2,3};
-		System.out.println(""+Arrays.toString(nums));
+		int[] nums = { 1, 2, 3 };
+		System.out.println("" + Arrays.toString(nums));
 	}
-	
-    public static void nextPermutation(int[] nums) {
 
-    	
-    	
-    	
-    }
+	public static void nextPermutation(int[] nums) {
+
+		
+		
+
+	}
 
 }
