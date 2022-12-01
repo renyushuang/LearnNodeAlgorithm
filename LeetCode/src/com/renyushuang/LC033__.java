@@ -39,7 +39,7 @@ package com.renyushuang;
 	题目数据保证 nums 在预先未知的某个下标上进行了旋转
 	-104 <= target <= 104
 */
-public class LC33__ {
+public class LC033__ {
 	public static void main(String[] args) {
 		int arr[] = { 4, 5, 6, 7 };
 		System.out.println("res=  " + search(arr, 4));
