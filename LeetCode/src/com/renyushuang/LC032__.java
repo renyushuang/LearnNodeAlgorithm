@@ -36,7 +36,7 @@ import java.util.LinkedList;
 	s[i] 为 '(' 或 ')'
 
 */
-public class LC032 {
+public class LC032__ {
 
 	public static void main(String[] args) {
 		System.out.println("" + longestValidParentheses("(()"));
