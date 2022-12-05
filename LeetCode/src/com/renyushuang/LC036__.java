@@ -79,13 +79,14 @@ public class LC036__ {
 					continue;
 				}
 				int curIndex = value - '1';
-				if (r[i][curIndex] || c[curIndex][j] || bo[curIndex][curIndex]) {
+				int boxIndex = j / 3 + i / 3 * 3;
+				if (r[i][curIndex] || c[curIndex][j] || bo[boxIndex][curIndex]) {
 					return false;
 				}
 
 				r[i][curIndex] = true;
 				c[curIndex][j] = true;
-				bo[curIndex][curIndex] = true;
+				bo[boxIndex][curIndex] = true;
 
 			}
 		}
